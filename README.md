@@ -1,121 +1,109 @@
-SpringBoot JWT Security 🔐
+🔐 Spring Boot JWT Authentication System
 
-A production-ready implementation of JWT-based Authentication & Authorization using Spring Boot and Spring Security.
+A secure REST API built using Spring Boot and Spring Security implementing JWT (JSON Web Token) based authentication and authorization.
+This project follows clean layered architecture and demonstrates real-world backend security implementation used in modern web applications.
 
-This project demonstrates secure, scalable, and stateless API protection following modern industry standards used in enterprise-grade backend systems.
+🚀 Features
+Authentication
 
-🚀 Core Features
-🔐 Stateless Authentication
+Secure Login API
 
-Implements token-based authentication to eliminate server-side session storage and improve scalability.
-
-👥 Role-Based Access Control (RBAC)
-
-Fine-grained endpoint protection using roles such as ADMIN and MEMBER.
-
-🛡️ Custom JWT Filter
-
-A custom JwtFilter that intercepts every incoming HTTP request, validates tokens, and establishes authentication context.
-
-🧾 Token Lifecycle Management
-
-Dedicated JwtGenerator for:
-
-Secure token generation
-
-Signature verification
-
-Claims extraction
-
-Expiration handling
-
-🔒 Secure Password Storage
-
-Uses BCryptPasswordEncoder to hash and secure user credentials with salted encryption.
-
-🛠️ Technology Stack
-Layer	Technology
-Language	Java 17+
-Framework	Spring Boot 3.x
-Security	Spring Security
-JWT Library	JJWT
-Build Tool	Maven
-API Testing	Postman
-📂 Project Structure
-src/main/java/com/example/security
-│
-├── JwtGenerator.java      // Token creation & validation logic
-├── JwtFilter.java         // Custom security filter
-├── MySecurityConfig.java  // Security configuration & filter chain
-├── MyController.java      // Secured REST endpoints
-└── UserService.java       // Authentication logic
-
-🔄 Authentication Flow
-
-User sends credentials to /test/login
-
-Server authenticates using Spring Security
-
-JWT is generated and returned
-
-Client sends token in header:
-
-Authorization: Bearer <token>
-
-
-JwtFilter validates token before granting access
-
-⚙️ Setup & Installation
-1️⃣ Clone Repository
-git clone https://github.com/adityaasaini/SpringBoot-JWT-Security.git
-
-2️⃣ Configure Secret Key
-
-Update the signing key in JwtGenerator.java with a secure 512-bit Base64-encoded string.
-
-3️⃣ Run Application
-
-Launch as a Spring Boot Application.
-
-🧪 API Testing
-🔑 Login
-POST /test/login
-
-
-Request Body
-
-{
-  "username": "admin",
-  "password": "admin123"
-}
-
-📌 Access Protected Endpoint
-GET /test/admin
-Header:
-Authorization: Bearer <your_token>
-
-🏗️ Security Best Practices Implemented
+JWT Token Generation
 
 Stateless Session Management
 
-Custom Authentication Entry Point
+Authorization
 
-Secure Password Hashing
+Role-Based Access Control (ADMIN / MEMBER)
 
-Role-based endpoint restriction
+Protected Endpoints
 
-Centralized Security Configuration
+Custom JWT Filter for request validation
 
-Clean layered architecture
+Security
+
+Password encryption using BCrypt
+
+Token expiration handling
+
+Secure filter chain configuration
+
+🧱 Architecture
+
+The project follows a layered architecture:
+
+Controller Layer – REST endpoints and request handling
+
+Service Layer – Business logic and authentication flow
+
+Security Layer – JWT filter, token validation, and security configuration
+
+DAO / Repository Layer – User data handling
+
+Utility Layer – Token generation and parsing
+
+🛠 Tech Stack
+
+Java 17+
+
+Spring Boot 3.x
+
+Spring Security
+
+JJWT Library
+
+Maven
+
+Postman
+
+📂 Project Structure
+src/main/java/com/security
+├── controller
+├── service
+├── repository
+├── security
+├── util
+└── model
+
+⚙️ How to Run the Project
+
+Clone the repository
+
+Configure application.properties with your settings
+
+Update JWT secret key inside JwtGenerator
+
+Run the application as Spring Boot App
+
+🧪 API Testing
+
+POST /test/login → Generate JWT Token
+
+Add Header:
+Authorization: Bearer <token>
+
+Access protected endpoints
+
+🎯 Learning Outcomes
+
+Understanding stateless authentication
+
+Implementing JWT security in Spring Boot
+
+Configuring Spring Security filter chain
+
+Role-based endpoint protection
+
+Secure password hashing
 
 📌 Future Enhancements
 
 Refresh Token Implementation
 
+Database-based User Management
+
 Token Blacklisting
 
 OAuth2 Integration
 
-Database-based user management
-
-Rate limiting & API throttling
+Deployment on AWS
