@@ -2,7 +2,7 @@
 
 A secure REST API built using Spring Boot and Spring Security implementing JWT (JSON Web Token) based authentication and authorization.
 This project follows clean layered architecture and demonstrates real-world backend security implementation used in modern web applications.
-
+---
 🚀 Features
 Authentication
 
