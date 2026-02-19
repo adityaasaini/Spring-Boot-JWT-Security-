@@ -28,6 +28,7 @@ Token expiration handling
 
 Secure filter chain configuration
 
+---
 🧱 Architecture
 
 The project follows a layered architecture:
@@ -56,6 +57,7 @@ Maven
 
 Postman
 
+---
 📂 Project Structure
 src/main/java/com/security
 ├── controller
@@ -65,6 +67,7 @@ src/main/java/com/security
 ├── util
 └── model
 
+---
 ⚙️ How to Run the Project
 
 Clone the repository
@@ -75,6 +78,7 @@ Update JWT secret key inside JwtGenerator
 
 Run the application as Spring Boot App
 
+---
 🧪 API Testing
 
 POST /test/login → Generate JWT Token
@@ -84,6 +88,7 @@ Authorization: Bearer <token>
 
 Access protected endpoints
 
+---
 🎯 Learning Outcomes
 
 Understanding stateless authentication
@@ -96,6 +101,7 @@ Role-based endpoint protection
 
 Secure password hashing
 
+---
 📌 Future Enhancements
 
 Refresh Token Implementation
